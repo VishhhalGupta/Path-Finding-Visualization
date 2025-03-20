@@ -1,67 +1,331 @@
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-  }
-  
-  h1 {
-    margin-top: 20px;
-  }
-  
-  #grid {
-    display: grid;
-    grid-template-columns: repeat(20, 30px);
-    grid-template-rows: repeat(20, 30px);
-    gap: 2px;
-    margin: 20px auto;
-    width: fit-content;
-  }
-  
-  /* .node.start {
-    background-color: green;
-  }
-  
-  .node.end {
-    background-color: red;
-  }
-  
-  .node.wall {
-    background-color: black;
-  }
-  
-  .node.path {
-    background-color: lightblue;
-  }*/
-  
-  .node {
-    width: 30px;
-    height: 30px;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-  } 
+/* body {
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f0f0f0;
+  margin: 0;
+}
 
+.container {
+  text-align: center;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-  /* .node {
-    width: 20px;
-    height: 20px;
-    border: 1px solid #ccc;
-    display: inline-block;
+h1 {
+  color: #333;
+  margin-bottom: 20px;
 } */
 
+/* Grid Styles */
+/* #grid {
+  display: grid;
+  width: fit-content;
+  grid-template-columns: repeat(20, 20px);
+  grid-gap: 10px;
+  background-color: transparent;
+  border: 20px solid transparent;
+  margin: 20px auto;
+}
+
+.node {
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border: 1px solid #eee;
+}
+
 .node.start {
-    background-color: green;
+  background-color: #90EE90 !important;
 }
 
 .node.end {
-    background-color: red;
+  background-color: #FF726F !important;
 }
 
 .node.wall {
-    background-color: black;
+  background-color: #4A4A4A;
 }
 
 .node.path {
-    background-color: lightblue;
+  background-color: #ADD8E6;
+} */
+
+/* Control Styles */
+/* .controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+button {
+  background-color: #5DADE2;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #2E86C1;
+}
+
+button:active {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  transform: translateY(1px);
+}*/
+
+/* Toggle Switch Styles */
+/*.toggle-container {
+  display: flex;
+  align-items: center;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 20px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked+.slider {
+  background-color: #2196F3;
+}
+
+input:focus+.slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+  transform: translateX(20px);
+} */
+
+/* General Styles */
+
+body {
+  font-family: "Arial", sans-serif;
+  /* Updated font */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f0f0f0;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+  background: #fff;
+  padding: 30px;
+  /* Increased padding */
+  border-radius: 12px;
+  /* More rounded corners */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  /* Stronger shadow */
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 30px;
+  /* Increased margin */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  /* Text shadow */
+}
+
+/* Grid Styles */
+
+#grid {
+  display: grid;
+  width: fit-content;
+  grid-template-columns: repeat(20, 25px);
+  /* Increased cell size */
+  grid-gap: 10px;
+  /* Reduced grid gap */
+  background-color: transparent;
+  /* Softer grid background */
+  border: 4px solid #646464;
+  /* Added a border */
+  border-radius: 8px;
+  /* Rounded corners for the grid */
+  margin: 20px auto;
+  /* Increased margin */
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Added shadow for depth */
+}
+
+.node {
+  width: 25px;
+  /* Increased cell size */
+  height: 25px;
+  /* Increased cell size */
+  background-color: #f9f9f9;
+  /* Lighter node background */
+  border: 1px solid #ccc;
+  /* Slightly darker border */
+  transition: background-color 0.2s ease;
+  /* Smooth transition */
+}
+
+.node.start {
+  background-color: #90EE90 !important;
+  /* LightGreen */
+}
+
+.node.end {
+  background-color: #FF726F !important;
+  /* Salmon */
+}
+
+.node.wall {
+  background-color: #333;
+  /* Darker wall color */
+}
+
+.node.path {
+  background-color: #ADD8E6;
+  /* LightBlue */
+}
+
+/* Control Styles */
+
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  /* Increased gap */
+  margin-bottom: 30px;
+  /* Increased margin */
+}
+
+button {
+  background-color: #5DADE2;
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  /* Increased padding */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  /* Increased font size */
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+  /* More rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  /* Stronger shadow */
+  transition: background-color 0.3s ease, transform 0.1s ease;
+  /* Smooth transition */
+}
+
+button:hover {
+  background-color: #2E86C1;
+  transform: translateY(-2px);
+  /* Lift on hover */
+}
+
+button:active {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  transform: translateY(1px);
+}
+
+/* Toggle Switch Styles */
+
+.toggle-container {
+  display: flex;
+  align-items: center;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 20px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked+.slider {
+  background-color: #2196F3;
+}
+
+input:focus+.slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+  transform: translateX(20px);
 }
