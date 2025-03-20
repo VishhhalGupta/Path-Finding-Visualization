@@ -5,12 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pathfinding Visualization</title>
     <link rel="stylesheet" href="lib/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
+
   <body>
-    <h1>Pathfinding Visualization</h1>
-    <div id="grid"></div>
-    <button onclick="startPathfinding()">Start Pathfinding</button>
-    <button onclick="resetGrid()">Reset Grid</button>
+    <div class="container">
+      <h1>Pathfinding Visualization</h1>
+
+      <div class="controls">
+        <button id="startBtn">
+          <i class="fas fa-play"></i>
+          Start Pathfinding
+        </button>
+        <button id="resetBtn">
+          <i class="fas fa-undo"></i>
+          Reset Grid
+        </button>
+        <button id="clearWallsBtn">
+          <i class="fas fa-ban"></i>
+          Clear Walls
+        </button>
+        <button id="mazeBtn">
+          <i class="fas fa-th"></i>
+          Generate Maze
+        </button>
+        <div class="toggle-container">
+          <label class="switch">
+            <input type="checkbox" id="drawWallsToggle" />
+            <span class="slider round"></span>
+          </label>
+          <label for="drawWallsToggle">Draw Walls</label>
+        </div>
+      </div>
+
+      <div id="grid"></div>
+    </div>
     <script src="lib/script.js"></script>
   </body>
 </html>
