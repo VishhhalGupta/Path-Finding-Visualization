@@ -60,7 +60,3 @@ You can customize this project by:
 - **Adjusting the heuristic:** Experiment with different heuristic functions in the `heuristic()` function to see how they affect the algorithm's performance.
 - **Adding different movement costs:** Instead of each step having a cost of 1, you could make diagonal moves more expensive.
 - **Implementing different pathfinding algorithms:** Try implementing Dijkstra's algorithm or other pathfinding techniques.
-
-## Contributing
-
-Feel free to contribute to this project by submitting pull requests with bug fixes, improvements, or new features!
